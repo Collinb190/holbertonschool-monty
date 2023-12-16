@@ -124,6 +124,7 @@ char **tokenize(char *line)
 void freeTokenArry(char **tokenArry)
 {
 	int i;
+
 	for (i = 0; tokenArry[i] != NULL; i++)
 	{
 		free(tokenArry[i]);
