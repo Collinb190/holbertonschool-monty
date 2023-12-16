@@ -70,6 +70,7 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 		line_number++;
 	}
 	free(line);
+	freeTokenArry(tokenArry);
 }
 /**
  * tokenize - tokenizes the current line
