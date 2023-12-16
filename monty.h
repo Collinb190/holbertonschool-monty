@@ -28,6 +28,7 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
+extern stack_t *stack;
 
 /**
  * struct instruction_s - opcode and its function
@@ -75,6 +76,8 @@ char **tokenize(char *line);
  * Descripton - frees each value of the array and then the array
 */
 void freeTokenArry(char **tokenArry);
+
+void freeStack(stack_t *stack);
 
 /**
  * Checks if a string represents a valid integer.

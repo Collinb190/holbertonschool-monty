@@ -23,6 +23,7 @@ int main(int argc, char *argv[])
 		{NULL, NULL}
 	};
 	parseMD(montyDoc, instruction); /* working here */
+	freeStack(stack);
 	fclose(montyDoc);
 	return (0);
 }
