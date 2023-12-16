@@ -63,7 +63,7 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 		}
 		if (instruction[i].opcode == NULL)
 		{
-			fprintf(stderr, "L%u: unknown instruction %s", line_number, tokenArry[0]);
+			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, tokenArry[0]);
 			freeTokenArry(tokenArry);
 			exit(EXIT_FAILURE);
 		}
