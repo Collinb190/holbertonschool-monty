@@ -48,9 +48,10 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 		}
 		tokenArry = tokenize(line);
 		for (i = 0; instruction[i].opcode != NULL; i++)
-		{
+		{	printf("DEBUG: Comparing %s with %s\n", tokenArry[0], instruction[i].opcode);
 			if (strcmp(tokenArry[0], instruction[i].opcode) == 0)
 			{
+				printf("DEBUG: Matched %s with %s\n", tokenArry[0], instruction[i].opcode);
 				instruction[i].f(&stack, line_number);
 			}
 			else
@@ -61,8 +62,8 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 		}
 		line_number++;
 		freeTokenArry(tokenArry);
-		free(line);
 	}
+	free(line);
 }
 /**
  * tokenize - tokenizes the current line
