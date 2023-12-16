@@ -29,13 +29,13 @@ FILE *openMontyFile(int argc, char *argv[])
  *
  * Descripton: parses the monty file to get commands
 */
+char **tokenArry = NULL;
 void parseMD(FILE *montyDoc, instruction_t instruction[])
 {
 	int i;
 	unsigned int line_number = 1;
 	stack_t *stack = NULL;
 	char *line = NULL;
-	char **tokenArry = NULL;
 	size_t len = 0;
 	ssize_t charsRead;
 
