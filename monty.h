@@ -1,6 +1,16 @@
 #ifndef MONTY_H
 #define MONTY_H
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stddef.h>
+#include <sys/types.h>
+
+#define MAX_TOKEN 64
+
+extern char **tokenArry;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -12,9 +22,9 @@
  */
 typedef struct stack_s
 {
-        int n;
-        struct stack_s *prev;
-        struct stack_s *next;
+	int n;
+	struct stack_s *prev;
+	struct stack_s *next;
 } stack_t;
 /**
  * struct instruction_s - opcode and its function
@@ -26,8 +36,74 @@ typedef struct stack_s
  */
 typedef struct instruction_s
 {
-        char *opcode;
-        void (*f)(stack_t **stack, unsigned int line_number);
+	char *opcode;
+	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+/**
+ * openMontyFile - opens monty file.
+ * @argc: number of arguments.
+ * @argv: array of arguments.
+ *
+ * Description: Checks if the program is called correctly and
+ * checks to see if the file is available to us.
+ * Return: returns a pointer to the file structure.
+*/
+FILE *openMontyFile(int argc, char *argv[]);
+/**
+ * push - put an element onto the stack
+ * @stack:
+ * @line_number:
+ *
+ * Descripton: Used to put an element onto the stack
+*/
+void push(stack_t **stack, unsigned int line_number);
+/**
+ * pall - prints all elements of the stack
+ * @stack:
+ * @line_number:
+ *
+ * Descripton: Used to print all elements of the stack
+*/
+void pall(stack_t **stack, unsigned int line_number);
+/**
+ * pint - prints the top element
+ * @stack:
+ * @line_number:
+ *
+ * Descripton: Used to print the top element of the stack
+*/
+void pint(stack_t **stack, unsigned int line_number);
+/**
+ * pop - remove top element of the stack
+ * @stack:
+ * @line_number:
+ *
+ * Descripton: Used to remove the top element of the stack
+*/
+void pop(stack_t **stack, unsigned int line_number);
+/**
+ * swap - swaps the top elements
+ * @stack:
+ * @line_number:
+ *
+ * Descripton: Used swap the top elements of the stack
+*/
+void swap(stack_t **stack, unsigned int line_number);
+/**
+ * add - adds togther(fuse) top two elements
+ * @stack:
+ * @line_number:
+ *
+ * Descripton: Used to add together(fuse) the top two elements on the stack
+*/
+void add(stack_t **stack, unsigned int line_number);
+/**
+ * nop - does nothing
+ * @stack:
+ * @line_number:
+ *
+ * Descripton: Used to do nothing to the stack
+*/
+void nop(stack_t **stack, unsigned int line_number);
 
 #endif /* MONTY_H */
