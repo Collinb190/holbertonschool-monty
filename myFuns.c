@@ -50,6 +50,7 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 		for (i = 0; instruction[i].opcode != NULL; i++)
 		{
 			printf("DEBUG: trying %s with %s\n", tokenArry[0], instruction[i].opcode);
+			printf("DEBUG: %s - %p\n", instruction[i].opcode, (void *)instruction[i].f);
 			if (strcmp(tokenArry[0], instruction[i].opcode) == 0)
 			{
 				instruction[i].f(&stack, line_number);
