@@ -142,7 +142,7 @@ bool isInt(const char *str)
 	{
 		str++;
 	}
-	while (str != '\0')
+	while (*str != '\0')
 	{
 		if (!isdigit((unsigned char)*str))
 		{
