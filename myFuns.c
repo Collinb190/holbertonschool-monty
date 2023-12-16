@@ -52,7 +52,7 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 			if (strcmp(tokenArry[0], instruction[i].opcode) == 0)
 			{
 				instruction[i].f(&stack, line_number);
-				continue;
+				break;
 			}
 			else
 			{
