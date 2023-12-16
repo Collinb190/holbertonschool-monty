@@ -29,7 +29,7 @@ FILE *openMontyFile(int argc, char *argv[])
  *
  * Descripton: parses the monty file to get commands
 */
-char **tokenArry;
+char **tokenArry = NULL;
 void parseMD(FILE *montyDoc, instruction_t instruction[])
 {
 	int i;
@@ -48,10 +48,14 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 		}
 		tokenArry = tokenize(line);
 		for (i = 0; instruction[i].opcode != NULL; i++)
-		{	printf("DEBUG: Comparing %s with %s\n", tokenArry[0], instruction[i].opcode);
+		{
+			if (tokenArry[0] == NULL)
+			{
+				freeTokenArry(tokenArry);
+				break;
+			}
 			if (strcmp(tokenArry[0], instruction[i].opcode) == 0)
 			{
-				printf("DEBUG: Matched %s with %s\n", tokenArry[0], instruction[i].opcode);
 				instruction[i].f(&stack, line_number);
 				freeTokenArry(tokenArry);
 				break;
@@ -66,6 +70,7 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 		line_number++;
 	}
 	free(line);
+	freeTokenArry(tokenArry);
 }
 /**
  * tokenize - tokenizes the current line
@@ -84,6 +89,7 @@ char **tokenize(char *line)
 	if (tokenArry == NULL)
 	{
 		perror("Malloc failed");
+		free(tokenArry);
 		exit(EXIT_FAILURE);
 	}
 	tokenCount = 0;
@@ -95,12 +101,14 @@ char **tokenize(char *line)
 		if (tokenArry[tokenCount] == NULL)
 		{
 			perror("strdup failed");
+			freeTokenArry(tokenArry);
 			exit(EXIT_FAILURE);
 		}
 		tokenCount++;
 		if (tokenCount >= MAX_TOKEN)
 		{
 			perror("to many tokens");
+			freeTokenArry(tokenArry);
 			exit(EXIT_FAILURE);
 		}
 		token = strtok(NULL, " \t");
