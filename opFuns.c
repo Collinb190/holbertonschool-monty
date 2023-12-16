@@ -21,7 +21,6 @@ void push(stack_t **stack, unsigned int line_number)
 	if (newNode == NULL)
 	{
 		perror("Malloc failed");
-		free(newNode);
 		exit(EXIT_FAILURE);
 	}
 	newNode->n = value;

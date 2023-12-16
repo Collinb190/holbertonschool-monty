@@ -62,8 +62,8 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 			exit(EXIT_FAILURE);
 		}
 		line_number++;
-		freeTokenArry(tokenArry);
 	}
+	freeTokenArry(tokenArry);
 	free(line);
 }
 /**
