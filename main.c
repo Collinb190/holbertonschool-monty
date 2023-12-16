@@ -20,6 +20,7 @@ int main(int argc, char *argv[])
 		*{"add", add},
 		*{"nop", nop}
 		*/
+		{NULL, NULL}
 	};
 	parseMD(montyDoc, instruction); /* working here */
 	fclose(montyDoc);
