@@ -6,6 +6,7 @@
 #include <string.h>
 #include <stddef.h>
 #include <ctype.h>
+#include <stdbool.h>
 #include <sys/types.h>
 
 #define MAX_TOKEN 64
@@ -74,6 +75,14 @@ char **tokenize(char *line);
  * Descripton - frees each value of the array and then the array
 */
 void freeTokenArry(char **tokenArry);
+
+/**
+ * Checks if a string represents a valid integer.
+ *
+ * @str: The string to check.
+ * Return: true if the string is a valid integer, false otherwise.
+ */
+bool isInt(const char *str);
 
 /**
  * push - put an element onto the stack

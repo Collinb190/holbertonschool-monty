@@ -70,7 +70,6 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 		line_number++;
 	}
 	free(line);
-	freeTokenArry(tokenArry);
 }
 /**
  * tokenize - tokenizes the current line
@@ -130,4 +129,26 @@ void freeTokenArry(char **tokenArry)
 		free(tokenArry[i]);
 	}
 	free(tokenArry);
+}
+/**
+ * Checks if a string represents a valid integer.
+ *
+ * @str: The string to check.
+ * Return: true if the string is a valid integer, false otherwise.
+ */
+bool isInt(const char *str)
+{
+	if (*str == '-')
+	{
+		str++;
+	}
+	while (str != '\0')
+	{
+		if (!isdigit((unsigned char)*str))
+		{
+			return (false);
+		}
+		str++;
+	}
+	return (true);
 }
