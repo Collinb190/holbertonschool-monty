@@ -26,6 +26,7 @@ typedef struct stack_s
 	struct stack_s *prev;
 	struct stack_s *next;
 } stack_t;
+
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -39,6 +40,7 @@ typedef struct instruction_s
 	char *opcode;
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
+
 /**
  * openMontyFile - opens monty file.
  * @argc: number of arguments.
@@ -49,12 +51,21 @@ typedef struct instruction_s
  * Return: returns a pointer to the file structure.
 */
 FILE *openMontyFile(int argc, char *argv[]);
+
 /**
  * parseMD - parses the monty file
  *
  * Descripton: parses the monty file to get commands
 */
 void parseMD(FILE *montyDoc, instruction_t instruction[]);
+
+/**
+ * tokenize - tokenizes the current line
+ *
+ * Description: tokenizes the line in the line variable
+*/
+char **tokenize(char *line);
+
 /**
  * push - put an element onto the stack
  * @stack:
