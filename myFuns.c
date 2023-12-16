@@ -62,7 +62,7 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 			}
 		}
 		line_number++;
-		free(tokenArry); /* add code to free the array line by line */
+		freeTokenArry(tokenArry);
 		free(line);
 	}
 }
@@ -106,4 +106,19 @@ char **tokenize(char *line)
 	}
 	tokenArry[tokenCount] = NULL;
 	return (tokenArry);
+}
+/**
+ * freeTokenArry - frees each value of the array
+ * @tokenArry: array to be freed
+ *
+ * Descripton - frees each value of the array and then the array
+*/
+void freeTokenArry(char **tokenArry)
+{
+	int i;
+	for (i = 0; tokenArry[i] != NULL; i++)
+	{
+		free(tokenArry[i]);
+	}
+	free(tokenArry);
 }

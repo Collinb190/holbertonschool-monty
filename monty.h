@@ -68,6 +68,14 @@ void parseMD(FILE *montyDoc, instruction_t instruction[]);
 char **tokenize(char *line);
 
 /**
+ * freeTokenArry - frees each value of the array
+ * @tokenArry: array to be freed
+ *
+ * Descripton - frees each value of the array and then the array
+*/
+void freeTokenArry(char **tokenArry);
+
+/**
  * push - put an element onto the stack
  * @stack:
  * @line_number:
