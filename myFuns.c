@@ -47,10 +47,9 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 			exit(EXIT_SUCCESS);
 		}
 		tokenArry = tokenize(line);
-		printf("DEBUG: comparing %s\n", tokenArry[0]);
 		for (i = 0; instruction[i].opcode != NULL; i++)
 		{
-			printf("DEBUG: trying %s\n", instruction[i].opcode);
+			printf("DEBUG: trying %s with %s\n", tokenArry[0], instruction[i].opcode);
 			if (strcmp(tokenArry[0], instruction[i].opcode) == 0)
 			{
 				instruction[i].f(&stack, line_number);
