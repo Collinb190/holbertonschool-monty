@@ -53,17 +53,18 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 			{
 				printf("DEBUG: Matched %s with %s\n", tokenArry[0], instruction[i].opcode);
 				instruction[i].f(&stack, line_number);
+				freeTokenArry(tokenArry);
 				break;
 			}
 		}
 		if (instruction[i].opcode == NULL)
 		{
 			fprintf(stderr, "L%u: unknown instruction %s", line_number, tokenArry[0]);
+			freeTokenArry(tokenArry);
 			exit(EXIT_FAILURE);
 		}
 		line_number++;
 	}
-	freeTokenArry(tokenArry);
 	free(line);
 }
 /**
