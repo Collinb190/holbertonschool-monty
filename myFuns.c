@@ -29,7 +29,7 @@ FILE *openMontyFile(int argc, char *argv[])
  *
  * Descripton: parses the monty file to get commands
 */
-char **tokenArry = NULL;
+char **tokenArry;
 void parseMD(FILE *montyDoc, instruction_t instruction[])
 {
 	int i;
@@ -46,8 +46,9 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 			free(line);
 			exit(EXIT_SUCCESS);
 		}
-		tokenArry = tokenize(line); /* first init of tokenArry */
-
+		tokenArry = tokenize(line);
+		printf("the first token is %s", tokenArry[0]); /* debug */
+		
 		for (i = 0; instruction[i].opcode != NULL; i++)
 		{
 			if (strcmp(tokenArry[0], instruction[i].opcode) == 0)
@@ -56,7 +57,7 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 			}
 			else
 			{
-				fprintf(stderr, "L %u: unknown instruction %s", line_number, tokenArry[0]);
+				fprintf(stderr, "L%u: unknown instruction %s", line_number, tokenArry[0]);
 				exit(EXIT_FAILURE);
 			}
 		}
@@ -67,8 +68,10 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 }
 /**
  * tokenize - tokenizes the current line
- *
+ * @line: line is current line of monty doc
+ * 
  * Description: tokenizes the line in the line variable
+ * Return: returns an array containg a tokenized line
 */
 char **tokenize(char *line)
 {

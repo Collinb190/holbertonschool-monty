@@ -1,8 +1,8 @@
 #include "monty.h"
 /**
  * push - put an element onto the stack
- * @stack:
- * @line_number:
+ * @stack: the stack to be manipulated
+ * @line_number: the current line number
  *
  * Descripton: Used to put an element onto the stack
 */
@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number)
 
 	if (tokenArry[1] == NULL || tokenArry[1][0] == '$' || !isdigit(tokenArry[1][0]))
 	{
-		fprintf(stderr, "L %u: usage: push integer$\n", line_number);
+		fprintf(stderr, "L%u: usage: push integer$\n", line_number);
 		exit(EXIT_FAILURE);
 	}
 	value = atoi(tokenArry[1]);
@@ -34,8 +34,8 @@ void push(stack_t **stack, unsigned int line_number)
 }
 /**
  * pall - prints all elements of the stack
- * @stack:
- * @line_number:
+ * @stack: the stack to be manipulated
+ * @line_number: the current line number
  *
  * Descripton: Used to print all elements of the stack
 */
