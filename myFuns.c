@@ -53,6 +53,7 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 			{
 				printf("DEBUG: Matched %s with %s\n", tokenArry[0], instruction[i].opcode);
 				instruction[i].f(&stack, line_number);
+				break;
 			}
 			else
 			{
