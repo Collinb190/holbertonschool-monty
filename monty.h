@@ -50,6 +50,12 @@ typedef struct instruction_s
 */
 FILE *openMontyFile(int argc, char *argv[]);
 /**
+ * parseMD - parses the monty file
+ *
+ * Descripton: parses the monty file to get commands
+*/
+void parseMD(FILE *montyDoc, instruction_t instruction[]);
+/**
  * push - put an element onto the stack
  * @stack:
  * @line_number:
