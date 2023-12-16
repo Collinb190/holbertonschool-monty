@@ -48,7 +48,7 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 		}
 		tokenArry = tokenize(line);
 		printf("the first token is %s", tokenArry[0]); /* debug */
-		
+		printf("the first token is %s", tokenArry[1]);
 		for (i = 0; instruction[i].opcode != NULL; i++)
 		{
 			if (strcmp(tokenArry[0], instruction[i].opcode) == 0)
@@ -69,7 +69,7 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 /**
  * tokenize - tokenizes the current line
  * @line: line is current line of monty doc
- * 
+ *
  * Description: tokenizes the line in the line variable
  * Return: returns an array containg a tokenized line
 */
