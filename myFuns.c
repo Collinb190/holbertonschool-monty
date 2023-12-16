@@ -12,14 +12,14 @@ FILE *openMontyFile(int argc, char *argv[])
 {
 	if (argc != 2)
 	{
-		fprintf(stderr, "Usage: monty file\n");
+		fprintf(stderr, "USAGE: monty file\n");
 		exit(EXIT_FAILURE);
 	}
 	FILE *doc = fopen(argv[1], "r");
 
 	if (!doc)
 	{
-		fprintf(stderr, "Error: Can't open %s\n", argv[1]);
+		fprintf(stderr, "Error: Can't open file %s\n", argv[1]);
 		exit(EXIT_FAILURE);
 	}
 	return (doc);
@@ -47,8 +47,6 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 			exit(EXIT_SUCCESS);
 		}
 		tokenArry = tokenize(line);
-		printf("the first token is %s\n", tokenArry[0]); /* debug */
-		printf("the second token is %s\n", tokenArry[1]);
 		for (i = 0; instruction[i].opcode != NULL; i++)
 		{
 			if (strcmp(tokenArry[0], instruction[i].opcode) == 0)
