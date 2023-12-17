@@ -71,12 +71,18 @@ char **tokenize(char *line);
 
 /**
  * freeTokenArry - frees each value of the array
- * @tokenArry: array to be freed
+ * @tokenAry: array to be freed
  *
  * Descripton - frees each value of the array and then the array
 */
 void freeTokenArry(char **tokenAry);
 
+/**
+ * freeStack- frees each value of the stack
+ * @stack: stack to be freed
+ *
+ * Descripton - frees each value of the stack and then the stack
+*/
 void freeStack(stack_t *stack);
 
 /**
