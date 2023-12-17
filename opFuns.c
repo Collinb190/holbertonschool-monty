@@ -67,3 +67,28 @@ void pint(stack_t **stack, unsigned int line_number)
 	}
 	printf("%d\n", (*stack)->n);
 }
+/**
+ * pop - remove top element of the stack
+ * @stack: stack to manipulate
+ * @line_number: current line of monty doc
+ *
+ * Descripton: Used to remove the top element of the stack
+*/
+void pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *temp;
+
+	if (*stack == NULL)
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+		exit(EXIT_FAILURE);
+	}
+	temp = *stack;
+	*stack = temp->next;
+
+	if (*stack != NULL)
+	{
+		(*stack)->prev = NULL;
+	}
+	free(temp);
+}

@@ -26,6 +26,8 @@ FILE *openMontyFile(int argc, char *argv[])
 }
 /**
  * parseMD - parses the monty file
+ * @montyDoc: the doc to operate on
+ * @instruction[]: the set of opcodes
  *
  * Descripton: parses the monty file to get commands
 */

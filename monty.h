@@ -120,6 +120,7 @@ void pint(stack_t **stack, unsigned int line_number);
  * Descripton: Used to remove the top element of the stack
 */
 void pop(stack_t **stack, unsigned int line_number);
+
 /**
  * swap - swaps the top elements
  * @stack:
