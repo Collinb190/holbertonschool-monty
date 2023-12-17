@@ -110,7 +110,6 @@ void swap(stack_t **stack, unsigned int line_number)
 	}
 	temp = (*stack)->next;
 	(*stack)->next = temp->next;
-	
 	if (temp->next != NULL)
 	{
 		temp->next->prev = *stack;
