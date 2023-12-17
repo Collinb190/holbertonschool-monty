@@ -139,13 +139,17 @@ void freeTokenArry(char **tokenAry)
  */
 bool isInt(const char *str)
 {
+	if (*str == '\0')
+	{
+		return (false);
+	}
 	if (*str == '-')
 	{
 		str++;
 	}
 	while (*str != '\0')
 	{
-		if (!isdigit((unsigned char)*str))
+		if (!isdigit(*str))
 		{
 			return (false);
 		}

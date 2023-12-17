@@ -11,7 +11,7 @@ void push(stack_t **stack, unsigned int line_number)
 	int value;
 	stack_t *newNode = NULL;
 
-	if (tokenAry[1] == NULL || tokenAry[1][0] == '\0' || !isdigit(tokenAry[1][0]))
+	if (tokenAry[1] == NULL || !isInt(tokenAry[1]))
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		exit(EXIT_FAILURE);
