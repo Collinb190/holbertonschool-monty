@@ -51,15 +51,19 @@ void pall(stack_t **stack, unsigned int line_number)
 		current = current->next;
 	}
 }
-void freeStack(stack_t *stack)
+/**
+ * pint - prints the top element
+ * @stack:
+ * @line_number:
+ *
+ * Descripton: Used to print the top element of the stack
+*/
+void pint(stack_t **stack, unsigned int line_number)
 {
-	stack_t *current = stack;
-	stack_t *next;
-
-	while (current != NULL)
+	if (*stack == NULL)
 	{
-		next = current->next;
-		free(current);
-		current = next;
+		fprintf(stderr, "L%u: can't pint, stack empty\n", line_number);
+		exit (EXIT_FAILURE);
 	}
+	printf("%d\n", (*stack)->n);
 }

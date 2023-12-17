@@ -93,6 +93,7 @@ void freeStack(stack_t *stack);
  * Descripton: Used to put an element onto the stack
 */
 void push(stack_t **stack, unsigned int line_number);
+
 /**
  * pall - prints all elements of the stack
  * @stack:
@@ -101,6 +102,7 @@ void push(stack_t **stack, unsigned int line_number);
  * Descripton: Used to print all elements of the stack
 */
 void pall(stack_t **stack, unsigned int line_number);
+
 /**
  * pint - prints the top element
  * @stack:
@@ -109,6 +111,7 @@ void pall(stack_t **stack, unsigned int line_number);
  * Descripton: Used to print the top element of the stack
 */
 void pint(stack_t **stack, unsigned int line_number);
+
 /**
  * pop - remove top element of the stack
  * @stack:
