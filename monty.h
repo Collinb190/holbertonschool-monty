@@ -88,7 +88,7 @@ void freeStack(stack_t *stack);
 /**
  * push - put an element onto the stack
  * @stack:
- * @line_number:
+ * @line_number: current line of monty doc
  *
  * Descripton: Used to put an element onto the stack
 */
@@ -97,7 +97,7 @@ void push(stack_t **stack, unsigned int line_number);
 /**
  * pall - prints all elements of the stack
  * @stack:
- * @line_number:
+ * @line_number: current line of monty doc
  *
  * Descripton: Used to print all elements of the stack
 */
@@ -105,8 +105,8 @@ void pall(stack_t **stack, unsigned int line_number);
 
 /**
  * pint - prints the top element
- * @stack:
- * @line_number:
+ * @stack: the stack to be manipulated
+ * @line_number: current line of monty doc
  *
  * Descripton: Used to print the top element of the stack
 */
@@ -114,8 +114,8 @@ void pint(stack_t **stack, unsigned int line_number);
 
 /**
  * pop - remove top element of the stack
- * @stack:
- * @line_number:
+ * @stack: the stack to be manipulated
+ * @line_number: current line of monty doc
  *
  * Descripton: Used to remove the top element of the stack
 */
@@ -123,8 +123,8 @@ void pop(stack_t **stack, unsigned int line_number);
 
 /**
  * swap - swaps the top elements
- * @stack:
- * @line_number:
+ * @stack: the stack to be manipulated
+ * @line_number: current line of monty doc
  *
  * Descripton: Used swap the top elements of the stack
 */
@@ -132,8 +132,8 @@ void swap(stack_t **stack, unsigned int line_number);
 
 /**
  * add - adds togther(fuse) top two elements
- * @stack:
- * @line_number:
+ * @stack: the stack to be manipulated
+ * @line_number: current line of monty doc
  *
  * Descripton: Used to add together(fuse) the top two elements on the stack
 */
@@ -141,8 +141,8 @@ void add(stack_t **stack, unsigned int line_number);
 
 /**
  * nop - does nothing
- * @stack:
- * @line_number:
+ * @stack: the stack to be manipulated
+ * @line_number: current line of monty doc
  *
  * Descripton: Used to do nothing to the stack
 */

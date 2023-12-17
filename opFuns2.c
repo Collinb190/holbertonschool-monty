@@ -16,3 +16,15 @@ void add(stack_t **stack, unsigned int line_number)
 	(*stack)->next->n += (*stack)->n;
 	pop(stack, line_number);
 }
+/**
+ * nop - does nothing
+ * @stack: stack to manipulate
+ * @line_number: current line of monty doc
+ *
+ * Descripton: Used to do nothing to the stack
+*/
+void nop(stack_t **stack, unsigned int line_number)
+{
+	(void)stack;
+	(void)line_number;
+}
