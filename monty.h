@@ -138,6 +138,7 @@ void swap(stack_t **stack, unsigned int line_number);
  * Descripton: Used to add together(fuse) the top two elements on the stack
 */
 void add(stack_t **stack, unsigned int line_number);
+
 /**
  * nop - does nothing
  * @stack:

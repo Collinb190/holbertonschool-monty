@@ -16,13 +16,13 @@ int main(int argc, char *argv[])
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swap},
+		{"add", add},
 		/*
-		*{"add", add},
 		*{"nop", nop}
 		*/
 		{NULL, NULL}
 	};
-	parseMD(montyDoc, instruction); /* working here */
+	parseMD(montyDoc, instruction);
 	freeStack(stack);
 	fclose(montyDoc);
 	return (0);
