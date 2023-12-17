@@ -129,6 +129,7 @@ void pop(stack_t **stack, unsigned int line_number);
  * Descripton: Used swap the top elements of the stack
 */
 void swap(stack_t **stack, unsigned int line_number);
+
 /**
  * add - adds togther(fuse) top two elements
  * @stack:
