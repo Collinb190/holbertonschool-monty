@@ -80,14 +80,6 @@ void freeTokenArry(char **tokenAry);
 void freeStack(stack_t *stack);
 
 /**
- * Checks if a string represents a valid integer.
- *
- * @str: The string to check.
- * Return: true if the string is a valid integer, false otherwise.
- */
-bool isInt(const char *str);
-
-/**
  * push - put an element onto the stack
  * @stack:
  * @line_number:

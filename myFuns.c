@@ -131,29 +131,4 @@ void freeTokenArry(char **tokenAry)
 	}
 	free(tokenAry);
 }
-/**
- * Checks if a string represents a valid integer.
- *
- * @str: The string to check.
- * Return: true if the string is a valid integer, false otherwise.
- */
-bool isInt(const char *str)
-{
-	if (*str == '\0')
-	{
-		return (false);
-	}
-	if (*str == '-')
-	{
-		str++;
-	}
-	while (*str != '\0')
-	{
-		if (!isdigit(*str))
-		{
-			return (false);
-		}
-		str++;
-	}
-	return (true);
-}
+
