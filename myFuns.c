@@ -30,9 +30,9 @@ FILE *openMontyFile(int argc, char *argv[])
  * @instruction[]: the set of opcodes
  *
  * Descripton: parses the monty file to get commands
-
+*/
 char **tokenAry = NULL;
-stack_t *stack = NULL;*/
+stack_t *stack = NULL;
 void parseMD(FILE *montyDoc, instruction_t instruction[])
 {
 	int i;

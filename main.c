@@ -7,8 +7,6 @@
  * Description: This program interpets monty commands
  * Return: returns a 0 to signal the program finished without isssue.
 */
-char **tokenAry = NULL;
-stack_t *stack = NULL;
 int main(int argc, char *argv[])
 {
 	FILE *montyDoc = openMontyFile(argc, argv);
