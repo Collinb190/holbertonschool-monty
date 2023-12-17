@@ -11,7 +11,7 @@
 
 #define MAX_TOKEN 64
 
-extern char **tokenArry;
+extern char **tokenAry;
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
@@ -75,7 +75,7 @@ char **tokenize(char *line);
  *
  * Descripton - frees each value of the array and then the array
 */
-void freeTokenArry(char **tokenArry);
+void freeTokenArry(char **tokenAry);
 
 void freeStack(stack_t *stack);
 

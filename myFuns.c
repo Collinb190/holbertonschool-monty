@@ -29,7 +29,7 @@ FILE *openMontyFile(int argc, char *argv[])
  *
  * Descripton: parses the monty file to get commands
 */
-char **tokenArry = NULL;
+char **tokenAry = NULL;
 stack_t *stack = NULL;
 void parseMD(FILE *montyDoc, instruction_t instruction[])
 {
@@ -46,25 +46,25 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 			free(line);
 			exit(EXIT_SUCCESS);
 		}
-		tokenArry = tokenize(line);
+		tokenAry = tokenize(line);
 		for (i = 0; instruction[i].opcode != NULL; i++)
 		{
-			if (tokenArry[0] == NULL)
+			if (tokenAry[0] == NULL)
 			{
-				freeTokenArry(tokenArry);
+				freeTokenArry(tokenAry);
 				break;
 			}
-			if (strcmp(tokenArry[0], instruction[i].opcode) == 0)
+			if (strcmp(tokenAry[0], instruction[i].opcode) == 0)
 			{
 				instruction[i].f(&stack, line_number);
-				freeTokenArry(tokenArry);
+				freeTokenArry(tokenAry);
 				break;
 			}
 		}
 		if (instruction[i].opcode == NULL)
 		{
-			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, tokenArry[0]);
-			freeTokenArry(tokenArry);
+			fprintf(stderr, "L%u: unknown instruction %s\n", line_number, tokenAry[0]);
+			freeTokenArry(tokenAry);
 			exit(EXIT_FAILURE);
 		}
 		line_number++;
@@ -80,15 +80,15 @@ void parseMD(FILE *montyDoc, instruction_t instruction[])
 */
 char **tokenize(char *line)
 {
-	char **tokenArry;
+	char **tokenAry;
 	char *token;
 	int tokenCount;
 
-	tokenArry = malloc(MAX_TOKEN * sizeof(char *));
-	if (tokenArry == NULL)
+	tokenAry = malloc(MAX_TOKEN * sizeof(char *));
+	if (tokenAry == NULL)
 	{
 		perror("Malloc failed");
-		free(tokenArry);
+		free(tokenAry);
 		exit(EXIT_FAILURE);
 	}
 	tokenCount = 0;
@@ -96,24 +96,24 @@ char **tokenize(char *line)
 
 	while (token != NULL)
 	{
-		tokenArry[tokenCount] = strdup(token);
-		if (tokenArry[tokenCount] == NULL)
+		tokenAry[tokenCount] = strdup(token);
+		if (tokenAry[tokenCount] == NULL)
 		{
 			perror("strdup failed");
-			freeTokenArry(tokenArry);
+			freeTokenArry(tokenAry);
 			exit(EXIT_FAILURE);
 		}
 		tokenCount++;
 		if (tokenCount >= MAX_TOKEN)
 		{
 			perror("to many tokens");
-			freeTokenArry(tokenArry);
+			freeTokenArry(tokenAry);
 			exit(EXIT_FAILURE);
 		}
 		token = strtok(NULL, " \t");
 	}
-	tokenArry[tokenCount] = NULL;
-	return (tokenArry);
+	tokenAry[tokenCount] = NULL;
+	return (tokenAry);
 }
 /**
  * freeTokenArry - frees each value of the array
@@ -121,15 +121,15 @@ char **tokenize(char *line)
  *
  * Descripton - frees each value of the array and then the array
 */
-void freeTokenArry(char **tokenArry)
+void freeTokenArry(char **tokenAry)
 {
 	int i;
 
-	for (i = 0; tokenArry[i] != NULL; i++)
+	for (i = 0; tokenAry[i] != NULL; i++)
 	{
-		free(tokenArry[i]);
+		free(tokenAry[i]);
 	}
-	free(tokenArry);
+	free(tokenAry);
 }
 /**
  * Checks if a string represents a valid integer.
